@@ -27,123 +27,138 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="layout">
 
-    <!-- ============ LEWA KOLUMNA ============ -->
-    <header class="side">
-      <div>
-        <h1 class="name">Imię Nazwisko</h1>
-        <p class="role">
-          <span lang="pl">Twój zawód / specjalizacja</span>
-          <span lang="en">Your profession / specialty</span>
-        </p>
-        <p class="tagline">
-          <span lang="pl">Krótkie zdanie o tym, czym się zajmujesz.</span>
-          <span lang="en">One short sentence about what you do.</span>
-        </p>
+  <!-- ============ MENU (prawy górny róg): podstrony + język ============ -->
+  <header class="topbar">
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="#home" data-nav="home"><span lang="pl">Start</span><span lang="en">Home</span></a></li>
+        <li><a href="#about" data-nav="about"><span lang="pl">O mnie</span><span lang="en">About</span></a></li>
+        <li><a href="#projects" data-nav="projects"><span lang="pl">Projekty</span><span lang="en">Projects</span></a></li>
+        <li><a href="#skills" data-nav="skills"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a></li>
+        <li><a href="#contact" data-nav="contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="lang" role="group" aria-label="Język / Language">
+      <button type="button" data-set-lang="pl" aria-pressed="true">PL</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <!-- ============ EKRAN: w danym momencie widoczny jest jeden widok ============ -->
+  <main class="stage">
+
+    <!-- Start: imię, zawód, zdanie i przyciski podstron -->
+    <section class="view view--home" data-view="home">
+      <h1 class="name">Imię Nazwisko</h1>
+      <p class="role">
+        <span lang="pl">Twój zawód / specjalizacja</span>
+        <span lang="en">Your profession / specialty</span>
+      </p>
+      <p class="tagline">
+        <span lang="pl">Krótkie zdanie o tym, czym się zajmujesz.</span>
+        <span lang="en">One short sentence about what you do.</span>
+      </p>
+
+      <div class="home-actions">
+        <a class="btn" href="#about"><span lang="pl">O mnie</span><span lang="en">About</span></a>
+        <a class="btn" href="#projects"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+        <a class="btn" href="#skills"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a>
+        <a class="btn" href="#contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
       </div>
+    </section>
 
-      <nav aria-label="Menu">
-        <ul>
-          <li><a href="#about"><span lang="pl">O mnie</span><span lang="en">About</span></a></li>
-          <li><a href="#projects"><span lang="pl">Projekty</span><span lang="en">Projects</span></a></li>
-          <li><a href="#skills"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a></li>
-          <li><a href="#contact"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a></li>
-        </ul>
-      </nav>
+    <!-- O mnie -->
+    <section class="view" data-view="about" hidden>
+      <a class="back" href="#home"><span lang="pl">← Wróć na start</span><span lang="en">← Back to start</span></a>
+      <p class="intro">
+        <span lang="pl">Cześć, jestem Imię. Tworzę rzeczy, na których mi zależy.</span>
+        <span lang="en">Hi, I’m Imię. I make things I care about.</span>
+      </p>
+      <h2><span lang="pl">O mnie</span><span lang="en">About me</span></h2>
+      <p lang="pl">Tutaj napisz 2–3 zdania o sobie: skąd jesteś, czym się zajmujesz i co Cię w tym pasjonuje. Pisz prostym językiem, tak jak mówisz.</p>
+      <p lang="en">Write 2–3 sentences about yourself here: where you’re from, what you do and what excites you about it. Keep it simple, the way you’d say it out loud.</p>
+      <p lang="pl">Drugi akapit jest opcjonalny. Możesz w nim wspomnieć o doświadczeniu, wykształceniu lub zainteresowaniach poza pracą.</p>
+      <p lang="en">The second paragraph is optional. Mention your experience, education or interests outside of work.</p>
+    </section>
 
-      <div class="lang" role="group" aria-label="Język / Language">
-        <button type="button" data-set-lang="pl" aria-pressed="true">PL</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-      </div>
-    </header>
+    <!-- Projekty -->
+    <section class="view" data-view="projects" hidden>
+      <a class="back" href="#home"><span lang="pl">← Wróć na start</span><span lang="en">← Back to start</span></a>
+      <h2><span lang="pl">Projekty</span><span lang="en">Projects</span></h2>
+      <ul class="projects">
 
-    <!-- ============ TREŚĆ ============ -->
-    <main>
-
-      <section id="about">
-        <p class="intro">
-          <span lang="pl">Cześć, jestem Imię. Tworzę rzeczy, na których mi zależy.</span>
-          <span lang="en">Hi, I’m Imię. I make things I care about.</span>
-        </p>
-        <h2><span lang="pl">O mnie</span><span lang="en">About me</span></h2>
-        <p lang="pl">Tutaj napisz 2–3 zdania o sobie: skąd jesteś, czym się zajmujesz i co Cię w tym pasjonuje. Pisz prostym językiem, tak jak mówisz.</p>
-        <p lang="en">Write 2–3 sentences about yourself here: where you’re from, what you do and what excites you about it. Keep it simple, the way you’d say it out loud.</p>
-        <p lang="pl">Drugi akapit jest opcjonalny. Możesz w nim wspomnieć o doświadczeniu, wykształceniu lub zainteresowaniach poza pracą.</p>
-        <p lang="en">The second paragraph is optional. Mention your experience, education or interests outside of work.</p>
-      </section>
-
-      <section id="projects">
-        <h2><span lang="pl">Projekty</span><span lang="en">Projects</span></h2>
-        <ul class="projects">
-
-          <li class="project">
-            <h3><span lang="pl">Nazwa projektu 1</span><span lang="en">Project name 1</span></h3>
-            <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
-            <p lang="en">One sentence: what it is and what problem it solves.</p>
-            <p class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
-            <div class="links">
-              <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
-              <a href="#">GitHub</a>
-            </div>
-          </li>
-
-          <li class="project">
-            <h3><span lang="pl">Nazwa projektu 2</span><span lang="en">Project name 2</span></h3>
-            <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
-            <p lang="en">One sentence: what it is and what problem it solves.</p>
-            <p class="tags"><span>Python</span><span>Design</span></p>
-            <div class="links">
-              <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
-            </div>
-          </li>
-
-          <li class="project">
-            <h3><span lang="pl">Nazwa projektu 3</span><span lang="en">Project name 3</span></h3>
-            <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
-            <p lang="en">One sentence: what it is and what problem it solves.</p>
-            <p class="tags"><span>Photoshop</span><span>Branding</span></p>
-            <div class="links">
-              <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
-            </div>
-          </li>
-
-        </ul>
-      </section>
-
-      <section id="skills">
-        <h2><span lang="pl">Umiejętności</span><span lang="en">Skills</span></h2>
-        <dl class="skills">
-          <div>
-            <dt><span lang="pl">Obszar 1</span><span lang="en">Area 1</span></dt>
-            <dd>HTML, CSS, JavaScript</dd>
+        <li class="project">
+          <h3><span lang="pl">Nazwa projektu 1</span><span lang="en">Project name 1</span></h3>
+          <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
+          <p lang="en">One sentence: what it is and what problem it solves.</p>
+          <p class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
+          <div class="links">
+            <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
+            <a href="#">GitHub</a>
           </div>
-          <div>
-            <dt><span lang="pl">Obszar 2</span><span lang="en">Area 2</span></dt>
-            <dd>Git, GitHub, Figma</dd>
-          </div>
-          <div>
-            <dt><span lang="pl">Języki</span><span lang="en">Languages</span></dt>
-            <dd><span lang="pl">polski (ojczysty), angielski (B2)</span><span lang="en">Polish (native), English (B2)</span></dd>
-          </div>
-        </dl>
-      </section>
+        </li>
 
-      <section id="contact">
-        <h2><span lang="pl">Kontakt</span><span lang="en">Contact</span></h2>
-        <p lang="pl">Masz pomysł, pytanie albo propozycję współpracy? Napisz do mnie.</p>
-        <p lang="en">Have an idea, a question or a collaboration in mind? Write to me.</p>
-        <a class="mail" href="mailto:twoj@email.com">twoj@email.com</a>
-        <ul class="social">
-          <li><a href="https://github.com/TWOJ-LOGIN" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/TWOJ-PROFIL" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/TWOJ-PROFIL" rel="noopener">Instagram</a></li>
-        </ul>
-      </section>
+        <li class="project">
+          <h3><span lang="pl">Nazwa projektu 2</span><span lang="en">Project name 2</span></h3>
+          <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
+          <p lang="en">One sentence: what it is and what problem it solves.</p>
+          <p class="tags"><span>Python</span><span>Design</span></p>
+          <div class="links">
+            <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
+          </div>
+        </li>
 
+        <li class="project">
+          <h3><span lang="pl">Nazwa projektu 3</span><span lang="en">Project name 3</span></h3>
+          <p lang="pl">Jedno zdanie: co to jest i jaki problem rozwiązuje.</p>
+          <p lang="en">One sentence: what it is and what problem it solves.</p>
+          <p class="tags"><span>Photoshop</span><span>Branding</span></p>
+          <div class="links">
+            <a href="#"><span lang="pl">Zobacz</span><span lang="en">View</span></a>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Umiejętności -->
+    <section class="view" data-view="skills" hidden>
+      <a class="back" href="#home"><span lang="pl">← Wróć na start</span><span lang="en">← Back to start</span></a>
+      <h2><span lang="pl">Umiejętności</span><span lang="en">Skills</span></h2>
+      <dl class="skills">
+        <div>
+          <dt><span lang="pl">Obszar 1</span><span lang="en">Area 1</span></dt>
+          <dd>HTML, CSS, JavaScript</dd>
+        </div>
+        <div>
+          <dt><span lang="pl">Obszar 2</span><span lang="en">Area 2</span></dt>
+          <dd>Git, GitHub, Figma</dd>
+        </div>
+        <div>
+          <dt><span lang="pl">Języki</span><span lang="en">Languages</span></dt>
+          <dd><span lang="pl">polski (ojczysty), angielski (B2)</span><span lang="en">Polish (native), English (B2)</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="view" data-view="contact" hidden>
+      <a class="back" href="#home"><span lang="pl">← Wróć na start</span><span lang="en">← Back to start</span></a>
+      <h2><span lang="pl">Kontakt</span><span lang="en">Contact</span></h2>
+      <p lang="pl">Masz pomysł, pytanie albo propozycję współpracy? Napisz do mnie.</p>
+      <p lang="en">Have an idea, a question or a collaboration in mind? Write to me.</p>
+      <a class="mail" href="mailto:twoj@email.com">twoj@email.com</a>
+      <ul class="social">
+        <li><a href="https://github.com/TWOJ-LOGIN" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/TWOJ-PROFIL" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/TWOJ-PROFIL" rel="noopener">Instagram</a></li>
+      </ul>
       <footer>© <span id="year">2026</span> Imię Nazwisko</footer>
-    </main>
-  </div>
+    </section>
+
+  </main>
 
   <script src="js/main.js"></script>
 </body>

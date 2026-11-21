@@ -20,6 +20,39 @@
   setLang(document.documentElement.getAttribute('data-lang'));
 })();
 
+// ============ WIDOKI: podstrona zastępuje zawartość ekranu ============
+// Adres z kotwicą (#about, #projects…) decyduje, który widok jest widoczny.
+// Dzięki temu przycisk „wstecz" w przeglądarce i linki działają.
+(function () {
+  var VIEWS = ['home', 'about', 'projects', 'skills', 'contact'];
+
+  function currentView() {
+    var name = window.location.hash.replace('#', '');
+    return VIEWS.indexOf(name) === -1 ? 'home' : name;
+  }
+
+  function showView() {
+    var name = currentView();
+
+    document.querySelectorAll('[data-view]').forEach(function (view) {
+      view.hidden = view.getAttribute('data-view') !== name;
+    });
+
+    document.querySelectorAll('[data-nav]').forEach(function (link) {
+      if (link.getAttribute('data-nav') === name) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('hashchange', showView);
+  showView();
+})();
+
 // ============ ROK W STOPCE ============
 (function () {
   var year = document.getElementById('year');

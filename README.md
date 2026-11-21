@@ -65,6 +65,18 @@ node --check js/main.js
 - **Wygląd** (kolory, czcionki, odstępy): edytuj `css/style.css`. Kolory są zebrane w zmiennych `:root` na początku pliku, więc zmiana np. `--accent` zmienia akcent na całej stronie.
 - **Zachowanie** (przełącznik języka, dynamiczne elementy): edytuj `js/main.js`.
 
+### Widoki (podstrony)
+
+Strona nie przewija się między sekcjami. Na starcie widać tylko imię, zawód, krótkie zdanie i przyciski. Kliknięcie przycisku podmienia zawartość ekranu na wybrany widok. Menu w prawym górnym rogu zawiera wszystkie widoki i wybór języka.
+
+Każdy widok to element `<section class="view" data-view="nazwa">` w `index.html`. Żeby dodać nową podstronę:
+
+1. Dopisz `<section class="view" data-view="nowa" hidden>` w `<main class="stage">`.
+2. Dodaj link w menu: `<li><a href="#nowa" data-nav="nowa">…</a></li>` w `<header class="topbar">`.
+3. Dodaj `'nowa'` do listy `VIEWS` w `js/main.js`.
+
+Adres każdego widoku to kotwica (`#about`, `#projects` itd.), więc działa przycisk „wstecz" w przeglądarce i można wysłać link do konkretnej podstrony.
+
 ### Dwujęzyczność
 
 Każdy tekst występuje w dwóch wersjach, oznaczonych atrybutem `lang`:
