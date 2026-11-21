@@ -53,6 +53,44 @@
   showView();
 })();
 
+// ============ ROZWIJANE MENU (prawy górny róg) ============
+(function () {
+  var toggle = document.querySelector('.menu-toggle');
+  var panel = document.getElementById('menu-panel');
+  if (!toggle || !panel) return;
+
+  function setOpen(open) {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.hidden = !open;
+  }
+
+  // Kliknięcie przycisku otwiera lub zamyka listę
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(panel.hidden);
+  });
+
+  // Wybór podstrony zamyka listę
+  panel.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // Kliknięcie poza menu zamyka listę
+  document.addEventListener('click', function (e) {
+    if (!panel.hidden && !e.target.closest('.topbar')) setOpen(false);
+  });
+
+  // Escape zamyka listę i wraca fokus na przycisk
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  setOpen(false);
+})();
+
 // ============ ROK W STOPCE ============
 (function () {
   var year = document.getElementById('year');
