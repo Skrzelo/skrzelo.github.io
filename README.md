@@ -12,7 +12,7 @@ skrzelo.github.io/
 ├── css/
 │   └── style.css   ← kolory, czcionki, układ i responsywność
 ├── js/
-│   └── main.js     ← menu, widoki, przełącznik języka i efekt myszy
+│   └── main.js     ← menu, widoki i przełącznik języka
 ├── img/
 │   └── tlo.jpg     ← zdjęcie tła (2000 px, zoptymalizowane)
 └── README.md       ← ten plik

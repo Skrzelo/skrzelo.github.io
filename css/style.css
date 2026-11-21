@@ -286,17 +286,23 @@ body::after {
     url("../img/tlo.jpg") center / cover no-repeat;
 }
 
-/* ============ TŁO REAGUJĄCE NA MYSZ ============ */
-/* Pozycję (--mx, --my) ustawia js/main.js; wartości domyślne to środek strony */
+/* ============ MGŁA NA GÓRZE STRONY ============ */
+/* Mocna u góry, wycisza się do około połowy wysokości ekranu.
+   Warstwa rozmycia (backdrop-filter) jest maskowana tym samym gradientem. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(
-    650px circle at var(--mx, 50%) var(--my, 30%),
-    rgba(246, 183, 60, 0.16),
-    transparent 60%
+  background: linear-gradient(
+    to bottom,
+    rgba(21, 19, 34, 0.85) 0%,
+    rgba(21, 19, 34, 0.45) 25%,
+    rgba(21, 19, 34, 0) 50%
   );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.4) 30%, transparent 50%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.4) 30%, transparent 50%);
 }
