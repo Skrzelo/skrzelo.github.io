@@ -273,6 +273,19 @@ footer { color: var(--muted); font-size: 0.9rem; margin-top: 3.5rem; }
   * { transition: none !important; }
 }
 
+/* ============ ZDJĘCIE TŁA ============ */
+/* Najniższa warstwa: zdjęcie z przyciemnieniem dla czytelności tekstu */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(21, 19, 34, 0.72), rgba(21, 19, 34, 0.9)),
+    url("../img/tlo.jpg") center / cover no-repeat;
+}
+
 /* ============ TŁO REAGUJĄCE NA MYSZ ============ */
 /* Pozycję (--mx, --my) ustawia js/main.js; wartości domyślne to środek strony */
 body::before {
