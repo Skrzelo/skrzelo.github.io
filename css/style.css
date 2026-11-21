@@ -172,3 +172,18 @@ footer { color: var(--muted); font-size: 0.9rem; padding: 0 0 3rem; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ============ TŁO REAGUJĄCE NA MYSZ ============ */
+/* Pozycję (--mx, --my) ustawia js/main.js; wartości domyślne to środek strony */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    650px circle at var(--mx, 50%) var(--my, 30%),
+    rgba(246, 183, 60, 0.16),
+    transparent 60%
+  );
+}
