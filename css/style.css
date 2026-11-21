@@ -274,16 +274,14 @@ footer { color: var(--muted); font-size: 0.9rem; margin-top: 3.5rem; }
 }
 
 /* ============ ZDJĘCIE TŁA ============ */
-/* Najniższa warstwa: zdjęcie z przyciemnieniem dla czytelności tekstu */
+/* Najniższa warstwa: zdjęcie tła */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background:
-    linear-gradient(rgba(21, 19, 34, 0.72), rgba(21, 19, 34, 0.9)),
-    url("../img/tlo.jpg") center / cover no-repeat;
+  background: url("../img/tlo.jpg") center / cover no-repeat;
 }
 
 /* ============ MGŁA NA GÓRZE STRONY ============ */
