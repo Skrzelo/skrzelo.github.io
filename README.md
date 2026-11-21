@@ -16,6 +16,49 @@ skrzelo.github.io/
 └── README.md       ← ten plik
 ```
 
+## Wymagania i konfiguracja (VS Code)
+
+### 1. Narzędzia
+
+| Narzędzie | Po co | Wymagane? |
+|---|---|---|
+| [Visual Studio Code](https://code.visualstudio.com/) | edycja kodu | tak |
+| [Git](https://git-scm.com/download/win) | wersjonowanie i publikacja | tak |
+| [Node.js LTS](https://nodejs.org/) | sprawdzanie składni JS (`node --check`) | nie, opcjonalne |
+
+Instalacja Node.js z wiersza poleceń (Windows):
+
+```powershell
+winget install --id OpenJS.NodeJS.LTS -e
+```
+
+### 2. Rozszerzenia VS Code
+
+Otwórz panel rozszerzeń (`Ctrl+Shift+X`) i zainstaluj:
+
+- **Live Server** (autor: Ritwick Dey, id `ritwickdey.liveserver`): podgląd strony na żywo. Odświeża przeglądarkę po każdym zapisie. Uruchamiasz go przyciskiem **Go Live** w prawym dolnym rogu, otwierając `index.html`.
+- **Polish Language Pack** (`MS-CEINTL.vscode-language-pack-pl`), opcjonalnie: interfejs VS Code po polsku.
+
+Rozszerzenia do HTML, CSS i JS (podpowiedzi, kolorowanie składni) są wbudowane w VS Code.
+
+Zainstalować można też z terminala:
+
+```powershell
+code --install-extension ritwickdey.liveserver
+```
+
+### 3. Otwarcie projektu
+
+1. **File → Open Folder…** i wybierz katalog `skrzelo.github.io`.
+2. Otwórz `index.html` i kliknij **Go Live**.
+3. Strona otworzy się pod adresem `http://127.0.0.1:5500`.
+
+Node.js nie jest potrzebny do uruchomienia strony. Potrzebny jest tylko do sprawdzenia składni JS:
+
+```powershell
+node --check js/main.js
+```
+
 ## Jak edytować stronę
 
 - **Treść** (imię, opis, projekty, umiejętności, kontakt): edytuj `index.html`.
